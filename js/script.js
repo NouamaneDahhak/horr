@@ -166,6 +166,298 @@ $('#portfolio a').nivoLightbox({
 
 
 
+
+
+let cars = [
+ /* {
+    "title": "كسوة",
+    "description": "كسوة سخونة ديال البرد",
+    "size": ["m","l","xl"],
+    "id": 1,
+	"img" : '1.jpg',
+	"price":'400',
+	"pricediscount":'299',
+	"sizechoise":''
+  }, {
+    "title": "كسوة",
+    "description": "كسوة سخونة ديال البرد",
+    "size": ["m","l","xl"],
+    "id": 2,
+	"img" : '2.jpg',
+	"price":'400',
+	"pricediscount":'299',
+	"sizechoise":''
+  }, {
+    "title": "كسوة",
+    "description": "كسوة سخونة ديال البرد",
+    "size": ["m","l","xl"],
+    "id": 3,
+	"img" : '3.jpg',
+	"price":'400',
+	"pricediscount":'299',
+	"sizechoise":''
+  }, {
+    "title": "كسوة",
+    "description": "كسوة سخونة ديال البرد",
+    "size": ["m","l","xl"],
+    "id": 4,
+	"img" : '4.jpg',
+	"price":'400',
+	"pricediscount":'299',
+	"sizechoise":''
+  }, {
+    "title": "كسوة",
+    "description": "كسوة سخونة ديال البرد",
+    "size": ["m","l","xl"],
+    "id": 5,
+	"img" : '5.jpg',
+	"price":'400',
+	"pricediscount":'299',
+	"sizechoise":''
+  }
+   
+  
+  
+ */
+]
+
+cars.forEach(car => {
+            var sizes = ''
+
+				for (var i = 0; i < car.size.length; i++) {
+					
+					
+			sizes+=	'<div class="form-check form-check-inline">                                                                  '+
+					'							  <input class="form-check-input" type="radio" name="radio'+car.id+'" id="inlineRadio1" value="'+car.size[i]+'"> '+
+					'							  <label class="form-check-label" for="inlineRadio1">'+car.size[i]+'</label>                                              '+
+					'							</div>                                                                                                      ';
+				} 
+				
+				console.log(sizes);
+
+	document.getElementById("products").innerHTML +=         
+
+'									<div class="col-sm-6 col-xs-12">                                         '+
+'										<div class="single_works_2_text">                                    '+
+'											<i><img src="images/icon1.png" alt="" />	</i>                 '+
+'											<div class="text_deatels">                                       '+
+'												<h3>'+car.title+'</h3>                                       '+
+'												<p>- حالات العقم و تنظيم الإخلال الهرموني  عند ‎الرجال و‏ المراة  '+
+'<br>- يفيد حالات الضعف الجنسي                                                                                '+
+'<br>- علاج جيد لأمراض الكيد                                                                                   '+
+'<br>- يقلل من احتمال الإصابة بمرض السرطان                                                                    '+
+'<br>- مصدر أساسي للطاقة ومفيد لأصحاب الارهاق                                                                  '+
+'</p>                                                                                                        '+
+'											</div>                                                           '+
+'										</div>                                                               '+
+'									</div>                                                                   '
+			  
+
+
+});
+
+
+
+let command = [];
+function  addtocard(id){
+	
+	     
+            var radioValue = $("input[name='radio"+id+"']:checked").val();
+            if(radioValue){
+
+            }
+			else {
+				radioValue = "";
+			}
+       
+		
+		
+	
+	let car = cars.find(car => car.id === id);
+	command.push(
+			  {
+			"title"        : car.title,
+			"description"  : car.description,
+			"size"         : car.size,
+			"id"           : car.id,
+			"img"          : car.img,
+			"price"        : car.price,
+			"pricediscount": car.pricediscount,
+			"sizechoise":radioValue,
+
+
+		  }
+	    )
+	
+	console.log(command);
+
+	document.getElementById("order-info-content").innerHTML += 
+	   "<div class='line'></div>"                                                                                             + 
+				
+      " <table  class='order-table product-cart-"+car.id+"'>                                                                                          "+
+      "      <tr>                                                                                                            "+
+      "        <td><img src='img/services/"+car.img+"' class='full-width'></img>       "+
+      "        </td>                                                                                                         "+
+      "        <td>                                                                                                          "+
+      "          <br> <span class='thin'>"+car.title+"</span>                                                                         "+
+      "          <br> <span class='thin small'> "+radioValue+"<br><br></span>         "+
+      "        </td>    <td><a href= '#call-to-action' class='button-add' onclick='delete_product("+car.id+")'><i class='fa fa-trash'></i> </a></td>                                                                                                     "+
+	  "                                                                                                                      "+
+      "      </tr>                                                                                                           "+
+      "      <tr>                                                                                                            "+
+      "        <td>                                                                                                          "+
+      "          <div class='price'>"+car.pricediscount+" DH</div>                                                                             "+
+      "        </td>                                                                                                         "+
+      "      </tr>                                                                                                           "+
+      "    </tbody>                                                                                                          "+
+      "  </table>  "                                                                                                          
+}
+function delete_product(id){
+	var destArr=[];
+        for(i in command){ 
+          if(command[i].id!=id) 
+                destArr[i]=command[i];
+          }
+        // destJson contains the content excluding node with 3.jpg
+        //You can replace the original content with destJson
+        command=destArr; 
+		console.log(command);
+		$(".product-cart-"+id).html('')
+}
+
+$(".button-submit").click(function(){
+	
+	var array = []
+
+	$("input:checkbox[name=type]:checked").each(function(){
+        array.push($(this).val() + "+++++++++");
+    });
+	alert(array);
+	
+							
+						 var Name          = $("input[name=Name]").val();
+						 var Phone         = $("input[name=Phone]").val();
+						 var Adresse       = $("input[name=Adresse]").val();
+						 var title         =$("input[name=msg]").val();
+						 var description   = array.toString();
+						
+						 
+						 $.ajax('https://script.google.com/macros/s/AKfycbzMj2icEGYmB2840WFWTKIKxWCpwdjxDq0VIvhvOmjkX19uUM0/exec', {
+							type: 'POST',  // http method
+							data: { 
+								Name           : Name           ,
+								Phone          : Phone          ,
+								Adresse        : Adresse        ,
+								title          : title          ,
+								description    : description    ,
+								
+
+							},  // data to submit
+							success: function (data, status, xhr) {
+								 alert("قد تم تسجيل طلبكم بنجاح. سنتواصل معكم لتأكيد طلبكم")
+								},
+							error: function (jqXhr, textStatus, errorMessage) {
+								 alert("error")
+							}
+						});
+	
+})
+
+/*
+$("button").click(function(){
+    
+    if($("input[name=Phone]").val() == ""){
+        alert("phone requ");
+    }
+    else{
+       if(command.length == 0){
+		
+		                 Name          = $("input[name=Name]").val();
+						 Phone         = $("input[name=Phone]").val();
+						 Adresse       = $("input[name=Adresse]").val();
+						 
+						 
+		$.ajax('https://script.google.com/macros/s/AKfycbzMj2icEGYmB2840WFWTKIKxWCpwdjxDq0VIvhvOmjkX19uUM0/exec', {
+							type: 'POST',  // http method
+							data: { 
+								Name           : Name           ,
+								Phone          : Phone          ,
+								Adresse        : Adresse        ,
+								
+							},  // data to submit
+							success: function (data, status, xhr) {
+								 alert("قد تم تسجيل طلبكم بنجاح. سنتواصل معكم لتأكيد طلبكم")
+								},
+							error: function (jqXhr, textStatus, errorMessage) {
+								 alert("error")
+							}
+						});
+	}
+			else{
+			command.forEach(cmd => {
+				
+				
+						
+
+							
+						 Name          = $("input[name=Name]").val();
+						 Phone         = $("input[name=Phone]").val();
+						 Adresse       = $("input[name=Adresse]").val();
+						 title         = cmd.title;
+						 description   = cmd.description;
+						 size          = cmd.size.join(", ");
+						 id            = cmd.id;
+						 img           = cmd.img;
+						 price         = cmd.price;
+						 pricediscount = cmd.pricediscount;
+						 sizechoise   = cmd.sizechoise;
+						 
+						 $.ajax('https://script.google.com/macros/s/AKfycbzMj2icEGYmB2840WFWTKIKxWCpwdjxDq0VIvhvOmjkX19uUM0/exec', {
+							type: 'POST',  // http method
+							data: { 
+								Name           : Name           ,
+								Phone          : Phone          ,
+								Adresse        : Adresse        ,
+								title          : title          ,
+								description    : description    ,
+								size           : size           ,
+								id             : id             ,
+								img            : img            ,
+								price          : price          ,
+								pricediscount  : pricediscount  ,
+								sizechoise     : sizechoise     ,
+
+							},  // data to submit
+							success: function (data, status, xhr) {
+								 alert("قد تم تسجيل طلبكم بنجاح. سنتواصل معكم لتأكيد طلبكم")
+								},
+							error: function (jqXhr, textStatus, errorMessage) {
+								 alert("error")
+							}
+						});
+
+		})	
+	} 
+    }
+	
+	
+
+			
+	
+});
+*/
+
+
+$(".hexagon").click(function (e) {  
+ //$(this).siblings(":last").hide(); 
+  var $checkbox = $(this).prev();
+        $checkbox.prop('checked', !$checkbox.prop('checked'));
+    if (!$(e.target).is('input:checkbox')) {
+      
+    }
+});
+
+
 }); 
 
 

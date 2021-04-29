@@ -109,12 +109,13 @@
                         
                         <div class="col-sm-12 col-xs-12 top-margin">
                             <div class="row " >
-                                <div  class="single_works_2_content wow fadeInRight" data-wow-duration="1.5s">
+                                <div  id= "products" class="single_works_2_content wow fadeInRight " data-wow-duration="1.5s">
 									<div class="col-sm-6 col-xs-12">
 										<div class="single_works_2_text">
 											<i><img src="images/icon1.png" alt="" />	</i>
 											<div class="text_deatels">
 												<h3>غداء ملكة النحل : jelly royal</h3>
+											
 												<p>- حالات العقم و تنظيم الإخلال الهرموني  عند ‎الرجال و‏ المراة
 <br>- يفيد حالات الضعف الجنسي
 <br>- علاج جيد لأمراض الكيد
@@ -372,7 +373,7 @@
                         <div class="">
 						
 						
-						
+							
                            <div class="row margin-top-bottom">
            
              <div class="col-md-offset-3 col-sm-offset-2 col-md-6 col-sm-8">   
@@ -380,37 +381,77 @@
                <div class="row">
                  <div class="contact-us-detail"><div href="#">! إملئ الإستمارة لتأكيد الطلب 
 </div></div>
-                  <form class="contact-us pattern-bg">
+                  <form  class="contact-us pattern-bg">
                     
-					  <div class="col-sm-12">
+					  <div class="col-sm-12 color-white">
 					  					   						<label >الإسم الكامل</label> 
 
 						<div class="form-group">
-						  <input type="text" id="name" class="form-control" placeholder="الإسم الكامل">
+						  <input type="text" id="name" name="Name" required class="form-control" placeholder="الإسم الكامل">
 						 </div>
                         </div>
 								
-                       <div class="col-sm-12">
+                       <div class="col-sm-12 color-white">
 					   						<label >المدينة</label> 
 
 					    <div class="form-group">
-						 <input type="email" id="email" class="form-control" placeholder="المدينة">
+						 <input type="email" name="Adresse" id="email" class="form-control" placeholder="المدينة">
 						 </div>
                         </div>
                         
-                        <div class="col-sm-12">
+                        <div class="col-sm-12 color-white">
 						<label >رقم الهاتف</label> 
 						  <div class="form-group">
-							<input type="text" id="website" class="form-control" placeholder="رقم الهاتف">
+							<input name="Phone" type="text" id="website" class="form-control" placeholder="رقم الهاتف">
 						   </div>
                           </div>
-                          
+                          <div class="col-sm-12 color-white">
+						<label >رسالة</label> 
+						  <div class="form-group">
+							<input name="msg" type="text" id="msg" class="form-control" placeholder="رسالة">
+						   </div>
+                        </div>
                     
 								
-                         <div class="col-sm-12">
+                         <div class="col-sm-12 color-white">
 						 
 						  <label >اختر نوع العسل</label> 
-						 <select dir="rtl" class="js-example-basic-multiple form-group form-control"  name="states[]" multiple="multiple">
+						  <br>
+						  
+						  
+						    <div class='hexbuttons form-group' >
+  <div class='hexr'>
+    <input name="type" type="checkbox" id="add_check" class="check hide" value="غداء ملكة النحل <br>70 dh / 100g" style="float: left;" />
+    <div class='hexagon'><span title='theme'> غداء ملكة النحل <br>70 dh / 100g</span></div>
+    <input name="type" type="checkbox" id="add_check" class="check hide" value="عسل الدغموس <br>270 dh / 1kg" style="float: left;" />
+    <div class='hexagon'><span title='theme'> عسل الدغموس <br>270 dh / 1kg</span></div>
+	<input name="type" type="checkbox" id="add_check" class="check hide" value="عسل الزكوم <br>270 dh / 1kg" style="float: left;" />
+    <div class='hexagon'><span title='theme'> عسل الزكوم <br>270 dh / 1kg</span></div>
+  </div>
+  <div class='hexr'>
+    <input name="type" type="checkbox" id="add_check" class="check hide" value="عسل الخروب <br>250 dh / 1kg" style="float: left;" />
+    <div class='hexagon'><span title='theme'> عسل الخروب <br>250 dh / 1kg</span></div>
+   	<input name="type" type="checkbox" id="add_check" class="check hide" value="عسل الأوكالبتوس <br>100 dh / 1kg" style="float: left;" />
+    <div class='hexagon'><span title='theme'> عسل الأوكالبتوس <br>100 dh / 1kg</span></div>
+  </div>
+  <div class='hexr'>
+   	<input name="type" type="checkbox" id="add_check" class="check hide" value=" حبوب اللقاح <br>50 dh / 100g" style="float: left;" />
+    <div class='hexagon'><span title='theme'> حبوب اللقاح <br>50 dh / 100g</span></div>
+   	<input name="type" type="checkbox" id="add_check" class="check hide" value=" عسل السدر <br>250 dh / 1kg" style="float: left;" />
+    <div class='hexagon'><span title='theme'> عسل السدر <br>250 dh / 1kg</span></div>
+   	<input name="type" type="checkbox" id="add_check" class="check hide" value="عسل الزعتر <br>270 dh / 1kg" style="float: left;" />
+    <div class='hexagon'><span title='theme'>عسل الزعتر <br>270 dh / 1kg</span></div>
+  </div>
+    <div class='hexr'>
+   	<input name="type" type="checkbox" id="add_check" class="check hide" value="عسل الليمون <br>100 dh / 1kg" style="float: left;" />
+    <div class='hexagon'><span title='theme'> عسل الليمون <br>100 dh / 1kg</span></div>
+   	<input name="type" type="checkbox" id="add_check" class="check hide" value="عسل الخزامى <br>250 dh / 1kg" style="float: left;" />
+    <div class='hexagon'><span title='theme'> عسل الخزامى <br>250 dh / 1kg</span></div>
+  </div>
+</div>
+						  
+						
+						 <!--select dir="rtl" class="js-example-basic-multiple form-group form-control"  name="states[]" multiple="multiple">
 						 <option selected="selected">اختر نوع العسل</option>
 
 							  <option value="daghmous">عسل الدغموس &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1kg / 250dh</option>
@@ -426,13 +467,13 @@
 							  <option value="akbar">عكبر النحل</option>
 							
 
-							</select>
+							</select-->
                           </div>
 						
                    
                    
                     <div class="text-center">      
-		               <button style="margin-top:20px;margin-left:100px;background-color:yellow;color:black;font-size:20px;" type="submit" class="button button-style button-style-dark button-style-color-2">إضغط هنا لتأكيد طلبك</button>
+		               <button onclick="" style="margin-top:20px;margin-left:100px;background-color:yellow;color:black;font-size:20px;" class="button-submit button button-style button-style-dark button-style-color-2">إضغط هنا لتأكيد طلبك</button>
 	                  </div>
                        
                   </form>
@@ -455,7 +496,7 @@
 
             </div> <!-- end of container -->
         </section>
-
+			   
 			
 								
         <footer id="footer" class="center-content">

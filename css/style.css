@@ -880,7 +880,7 @@ background: #ffffff;
 	padding: 50px;
     background-color: #ffffff;
     box-shadow: -2px 40px 34px -24px rgba(0, 0, 0, 0.2);
-    border: solid 7px #da9600;
+   
 
 }
 
@@ -1004,8 +1004,15 @@ background: #ffffff;
 }
 
 .pattern-bg {
-	background: url(https://s23.postimg.org/klq72xovv/pattern_bg.png);
-	background-repeat: repeat;
+	
+	background: #212121;
+
+}
+.color-white > label{
+	
+	      font: bold 16px 'Droid Arabic Kufi', serif;
+		  color:white !important;
+
 }
 
 
@@ -1013,7 +1020,126 @@ background: #ffffff;
 
 
 
+*{ box-sizing: border-box; }
+html,body{ height: 100%; width: 100%; }
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700,300|Ubuntu+Condensed|Ubuntu+Mono);
+body {background: #212121;}
+a {text-decoration: none;}
+
+.hexbuttons {
+	
+  margin-top: 50px;
+  padding: 50px 0 0 5px;
+  width: 345px;
+}
+.hexr {
+  height: 100px;
+  margin-top: -15px;
+}
+.hexr:nth-child(even) {
+  margin-left: 53px;
+  width: 220px;
+}
+.hexagon {
+	cursor: pointer;
+  background: #f51e55;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  font-size: 36px;
+  height: 55px;
+  margin: 0 5px 0 0;
+  position: relative;
+	width: 100px;
+}
+.hexagon:before {
+	content: attr(title);
+	position: absolute;
+	top: -25px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 25px solid #f51e55;
+	
+	
+	
+	
+}
+.hexagon:after {
+	content: "";
+	position: absolute;
+	bottom: -25px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 25px solid #f51e55;
+}
+.hexagon span { 
+  display: block; 
+  height: 100%;
+  padding-top: 8px;
+  text-align: center;
+  width: 100%;
+  
+  
+    content: attr(title);
+  background: #f51e55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  text-transform: uppercase;
+  transition: 0.1s all ease-in-out;
+  width: 100%;
+  color:#fff;
+      font: bold 14px 'Droid Arabic Kufi', serif;
+
+  
+}
+.hexagon span::before {
+  /*content: attr(title);
+  background: #f51e55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  font: 14px 'Ubuntu Mono', monospace;
+  opacity: 0;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  text-transform: uppercase;
+  transition: 0.1s all ease-in-out;
+  width: 100%;*/
+}
+.hexagon:hover span::before {
+  opacity: 1;
+  top: 5px;
+  transition: 0.1s all ease-in-out;
+}
 
 
 
 
+
+input:checked + div {
+  background-color: #068421 !important;
+}
+input:checked + .hexagon:before {
+  border-bottom: 25px solid #068421;
+
+}
+input:checked +  .hexagon span {
+  background:  #068421;
+}
+input:checked +  .hexagon:after{
+  border-top: 25px solid #068421;
+}
