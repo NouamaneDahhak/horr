@@ -332,7 +332,6 @@ $(".button-submit").click(function(){
 	$("input:checkbox[name=type]:checked").each(function(){
         array.push($(this).val() + "+++++++++");
     });
-	alert(array);
 	
 							
 						 var Name          = $("input[name=Name]").val();

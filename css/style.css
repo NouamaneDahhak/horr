@@ -1005,7 +1005,6 @@ background: #ffffff;
 
 .pattern-bg {
 	
-	background: #212121;
 
 }
 .color-white > label{
@@ -1023,7 +1022,6 @@ background: #ffffff;
 *{ box-sizing: border-box; }
 html,body{ height: 100%; width: 100%; }
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700,300|Ubuntu+Condensed|Ubuntu+Mono);
-body {background: #212121;}
 a {text-decoration: none;}
 
 .hexbuttons {
